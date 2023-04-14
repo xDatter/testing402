@@ -4,33 +4,180 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
-    <link rel="stylesheet" href="formulario.css">
+    <link rel="stylesheet" href="estilos/main.css">
+    <title>Ficha Medica</title>
 </head>
 <body>
-    <form action="post">
 
-        <div>
-            <p>Ingrese </p>
-            <input type="text">
-        </div>
-        <div>
-            <p>Ingrese </p>
-            <input type="text">
-        </div>
-        <div>
-            <p>Ingrese </p>
-            <input type="text">
-        </div>
-        <div>
-            <p>Ingrese </p>
-            <input type="text">
-        </div>
 
-    </form>
+     <header>
+        
+        <nav
+         class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="">
+                Ficha Medica
+                
+              </a>
+            </div>
+        </nav>
+    </header>
+
+
+
+  
+    <main class="main-content">
+
+        <div class="crud-container">
+
+            <div class="crud-header">
+
+                <h1>Pacientes clinica alemana</h1>
+                <button class="button is-success" id="open2">nuevo paciente</button>
+
+            </div>
+            <table class="table">
+                <thead>
+                  <tr>
+                   <th>rut</th>
+                   <th>nombre</th>
+                   <th>apellidos</th>
+                   <th>direccion</th>
+                   <th>ciudad</th>
+                   <th>telefono</th>
+                   <th>Email</th>
+                   <th>fecha de nacimiento</th>
+                   <th>estado civil</th>
+                   <th>comentarios</th>
+                  </tr>
+                </thead>
+                
+                <tbody>
+                  
+                    <th>19.424.440-1</th>
+                    <td>franco</td>
+                    <td>tagle</td>
+                    <td>quintanilla</td>
+                    <td>puerto varas</td>
+                    <td>85475421</td>
+                    <td>francotagle@gmail.com</td>
+                    <td>14/01/1548</td>
+                    <td>soltero</td>
+                    <th>tengo cancer</th>
+                    <button class="button is-danger">borrar</button>
+                  
+         </div> 
+
+    </main>
     
+    <div class="modal" id="modall">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">registro nuevo paciente</p>
+            <button class="delete" aria-label="close" id="cerrarregistrar"></button>
+          </header>
+          <section class="modal-card-body">
+            <form action="" id="register-form">
 
 
-    <script src="formulario.js"></script>
+                <div class="nombre">
+                    <label class="label">Nombre</label>
+                    <div class="control">
+                      <input class="input" id="nombre" type="text" placeholder="ingresa tu nombre">
+                    </div>
+                  </div>
+
+
+
+
+                  <div class="apellido">
+                    <label class="label">Apeliido</label>
+                    <div class="control">
+                      <input class="input" id="apellido" type="text" placeholder="ingresa tu apellido">
+                    </div>
+                  </div>
+
+
+                  <div class="direccion">
+                    <label class="label">Dirección</label>
+                    <div class="control">
+                      <input class="input" id="direccion" type="text" placeholder="ingresa tu direccion">
+                    </div>
+                  </div>
+
+                  <div class="ciudad">
+                    <label class="label">Ciudad</label>
+                    <div class="control">
+                      <input class="input" id="ciudad" type="text" placeholder="ingresa tu ciudad">
+                    </div>
+                  </div>
+
+                  <div class="telefono">
+                    <label class="label">Teléfono</label>
+                    <div class="control">
+                      <input class="input is-success" id="telefono" type="tel" placeholder="+56912345678">
+                      <span class="icon is-small is-left">
+                      </span>
+                    </div>
+                    
+                  </div>
+
+
+
+                  <div class="email">
+                    <label class="label">Email</label>
+                      <input class="input is-success" id="email" type="email" placeholder="tucorreo@hotmail.com">
+                      <span class="icon is-small is-left">
+                      </span>
+                    </div>
+
+
+                    <div class="fechanacimiento">
+                        <label class="label">Fecha de Nacimiento</label>
+                          <input class="input is-success" id="fechaNac" type="date">
+                        
+                          </span>
+                        </div>
+
+
+                    <div class="estadocivil">
+                        <label class="label">Estado Civil</label>
+                        <div class="control">
+                          <div class="select">
+                            <select>
+                              <option disabled selected>Seleccione una Opción</option>
+                              <option value="soltero">Soltero/a</option>
+                              <option value="casado">Casado/a</option>
+                              <option value="divorciado">Divorciado/a</option>
+                              <option value="viudo">Viudo/a</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="comentario">
+                        <label class="label" >Comentario</label>
+                        <div class="control">
+                          <textarea class="textarea" id="comentario" placeholder="Escribe un comentario "></textarea>
+                        </div>
+                      </div>
+
+
+
+
+
+
+            </form>
+          </section>
+          <footer class="modal-card-foot">
+            <button type="submit" class="button is-success" id="btn-registrar">Registrar</button>
+            
+          </footer>
+        </div>
+      </div>
+
+      <script type="module" src="js/index.js"> </script>
 </body>
 </html>
