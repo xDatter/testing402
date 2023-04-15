@@ -11,20 +11,12 @@
 
 <body>
 
-
-  <header>
-
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="">
-          Ficha Médica
-        </a>
-      </div>
-    </nav>
+  <nav >
+  </nav>
+  
+  <header class="navbar" role="navigation" aria-label="main navigation">
+    <p class="navbar-item">Ficha Médica</p>
   </header>
-
-
-
 
   <main class="main-content">
 
@@ -33,119 +25,137 @@
       <div class="crud-header">
 
         <h1>Pacientes Clínica Alemana</h1>
-        <button class="button is-success" id="open2">Nuevo Paciente</button>
+        <button class="button is-success" id="abrirRegistrar">Nuevo Paciente</button>
 
       </div>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>RUT</th>
-            <th>Nombre</th>
-            <th>Apellidos</th>
-            <th>DirecciÓn</th>
-            <th>Ciudad</th>
-            <th>TeléÉfono</th>
-            <th>Email</th>
-            <th>Fecha de Nacimiento</th>
-            <th>Estado Civil</th>
-            <th>Comentario</th>
-          </tr>
-        </thead>
 
-        <tbody>
 
-          <th>19.424.440-1</th>
-          <td>franco</td>
-          <td>tagle</td>
-          <td>quintanilla</td>
-          <td>puerto varas</td>
-          <td>85475421</td>
-          <td>francotagle@gmail.com</td>
-          <td>14/01/1548</td>
-          <td>soltero</td>
-          <th>Cáncer terminal</th>
-          <button class="button is-danger">borrar</button>
+      <div class="table titulosTabla">
+
+        <div class="campo campPeque">RUT</div>
+        <div class="campo campPeque">Nombre</div>
+        <div class="campo campPeque">Apellido</div>
+        <div class="campo campPeque">Ciudad</div>
+        <div class="campo campPeque">Dirección</div>
+        <div class="campo campPeque">Teléfono</div>
+        <div class="campo campMed">Email</div>
+        <div class="campo campMed">Fecha de Nac.</div>
+        <div class="campo campPeque">Estado Civil</div>
+        <div class="campo campGrande">Comentario</div>
+
+      </div>
+
+      <!-- Este es el contenedor grande de los registros, cuidado  -->
+      <div class="table contenidoTabla" id="contenidoTabla">
+        
+        <!-- Este es un registro tipo, es importante mantener las clases y el orden de los campos inicia aqui y termina... -->
+        <!-- <div class="registroTabla">
+          <div class="campo campPeque"><p>18902170-4</p></div>
+          <div class="campo campPeque"><p>Ignacio</p></div>
+          <div class="campo campPeque"><p>Cárdenas</p></div>
+          <div class="campo campPeque"><p>Ancud</p></div>
+          <div class="campo campPeque"><p>Chiloé #1053</p></div>
+          <div class="campo campPeque"><p>+56957114003</p></div>
+          <div class="campo campMed"><p>ignacio.cardenas.request@gmail.com</p></div>
+          <div class="campo campMed"><p>25/09/1994</p></div>
+          <div class="campo campPeque"><p>Soltero</p></div>
+          <div class="campo campGrande"><p>Lorem ipsum dolor sit amis magni impedit modi quaerat. Cupiditate harum ipsa necessitatibus aliquam doloribus dolores impedit veritatis, est alias consectetur eos hic nulla autem eveniet maiores qui expedita vero sunt sed dolor ea vitae sapiente mollitia dolorem? Eligendi, quam!</p></div>
+        </div> -->
+        <!-- ... y terminar aquí -->
+        <!-- esta es la plantilla en blanco para usarla en el rellenado con el js -->
+        <!-- <div class="registroTabla">
+          <div class="campo campPeque"><p></p></div>
+          <div class="campo campPeque"><p></p></div>
+          <div class="campo campPeque"><p></p></div>
+          <div class="campo campPeque"><p></p></div>
+          <div class="campo campPeque"><p></p></div>
+          <div class="campo campPeque"><p></p></div>
+          <div class="campo campMed"><p></p></div>
+          <div class="campo campMed"><p></p></div>
+          <div class="campo campPeque"><p></p></div>
+          <div class="campo campGrande"><p></p></div>
+        </div> -->
+        <!-- fin de plantilla, no borrar -->
+
+      </div>
 
     </div>
-
   </main>
 
-  <div class="modal" id="modall">
+  <section class="modal" id="modall">
+    <!-- Esta parte al hcaer click en el id "abrirRegistrar" abre el formulario y deja el fondo oscuro -->
     <div class="modal-background"></div>
     <div class="modal-card">
-      <header class="modal-card-head">
+      <div class="modal-card-head">
         <p class="modal-card-title">Registro Nuevo Paciente</p>
-        <button class="delete" aria-label="close" id="cerrarregistrar"></button>
-      </header>
-      <section class="modal-card-body">
-        <form action="" id="register-form">
+        <button class="delete" aria-label="close" id="cerrarRegistrar"></button>
+      </div>
 
+      <article class="modal-card-body">
+        <form action="index.html" id="register-form" >
+
+          <div class="rut">
+            <label class="label">RUT</label>
+            <div class="control">
+              <input  class="input" id="rut" type="text" placeholder="ingresa tu RUT">
+            </div>
+          </div>
 
           <div class="nombre">
             <label class="label">Nombre</label>
             <div class="control">
-              <input class="input" id="nombre" type="text" placeholder="ingresa tu nombre">
+              <input  class="input" id="nombre" type="text" placeholder="ingresa tu nombre">
             </div>
           </div>
-
-
-
 
           <div class="apellido">
             <label class="label">Apeliido</label>
             <div class="control">
-              <input class="input" id="apellido" type="text" placeholder="ingresa tu apellido">
-            </div>
-          </div>
-
-
-          <div class="direccion">
-            <label class="label">Dirección</label>
-            <div class="control">
-              <input class="input" id="direccion" type="text" placeholder="ingresa tu direccion">
+              <input  class="input" id="apellido" type="text" placeholder="ingresa tu apellido">
             </div>
           </div>
 
           <div class="ciudad">
             <label class="label">Ciudad</label>
             <div class="control">
-              <input class="input" id="ciudad" type="text" placeholder="ingresa tu ciudad">
+              <input  class="input" id="ciudad" type="text" placeholder="ingresa tu ciudad">
+            </div>
+          </div>
+
+          <div class="direccion">
+            <label class="label">Dirección</label>
+            <div class="control">
+              <input  class="input" id="direccion" type="text" placeholder="ingresa tu direccion">
             </div>
           </div>
 
           <div class="telefono">
             <label class="label">Teléfono</label>
             <div class="control">
-              <input class="input is-success" id="telefono" type="tel" placeholder="+56912345678">
+              <input  class="input" id="telefono" type="tel" placeholder="+5698765432">
               <span class="icon is-small is-left">
               </span>
             </div>
 
           </div>
 
-
-
           <div class="email">
             <label class="label">Email</label>
-            <input class="input is-success" id="email" type="email" placeholder="tucorreo@hotmail.com">
+            <input  class="input" id="email" type="email" placeholder="tucorreo@hotmail.com">
             <span class="icon is-small is-left">
             </span>
           </div>
 
-
           <div class="fechanacimiento">
             <label class="label">Fecha de Nacimiento</label>
-            <input class="input is-success" id="fechaNac" type="date">
-
-            </span>
+            <input  class="input" id="fechaNac" type="date">
           </div>
-
 
           <div class="estadocivil">
             <label class="label">Estado Civil</label>
             <div class="control">
               <div class="select">
-                <select>
+                <select id="estadocivil">
                   <option disabled selected>Seleccione una Opción</option>
                   <option value="soltero">Soltero/a</option>
                   <option value="casado">Casado/a</option>
@@ -156,27 +166,21 @@
             </div>
           </div>
 
-
           <div class="comentario">
             <label class="label">Comentario</label>
             <div class="control">
               <textarea class="textarea" id="comentario" placeholder="Escribe un comentario "></textarea>
             </div>
-          </div>
-
-
-
-
-
-
+          </div>          
         </form>
-      </section>
-      <footer class="modal-card-foot">
-        <button type="submit" class="button is-success" id="btn-registrar">Registrar</button>
+        <div class="modal-card-foot">
+          <button   class="button is-success" id="botonRegistrar">Registrar</button>
+        </div>
+      </article>
 
-      </footer>
+
     </div>
-  </div>
+  </article>
 
   <script type="module" src="js/index.js"> </script>
 </body>

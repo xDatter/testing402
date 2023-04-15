@@ -31,3 +31,61 @@
     padding: 0 2rem 1rem 2rem;
     border-bottom: 1px solid;
 }
+.titulosTabla, .registroTabla{
+    display: flex;
+    align-items: top;
+    min-width: 90%;
+    max-width: 100%;
+    min-height: 5vh;
+    /* outline: red solid 1px; */
+}
+
+.contenidoTabla{
+    /* outline: red solid 1px; */
+    min-width: 90%;
+    max-width: 100%;
+    min-height: 50vh;
+    
+}
+.campo{
+    /* outline: blue solid 1px; */
+    flex-wrap: wrap;
+    margin: 2px;
+    font-size: 13px;
+    overflow-x: auto;
+    padding: 0 5px;
+
+}
+.titulosTabla .campo{
+    display: flex;
+    align-items: top;
+    justify-content: left;
+    flex-grow: 1;
+    font-weight: bolder;
+    /* outline: red solid 1px; */
+    background-color: #eee;
+
+}
+
+.campPeque
+{
+    max-width: 100px;
+    min-width: 100px;
+}
+.campMed
+{
+    max-width: 150px;
+    min-width: 150px;
+}
+
+.campGrande
+{
+    min-width: 150px;
+    flex-grow: 2;
+}
+
+.registroTabla
+{
+    border-bottom: 3px solid #0002;
+    margin-bottom: 10px;
+}
