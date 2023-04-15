@@ -42,6 +42,13 @@ botonRegistrar.addEventListener('click',(e) =>{
         divCampo.append(pCampo);
 
         divRegistro.append(divCampo);
+
+        if(i==8){
+            texto.value="0"; 
+        }else{
+
+            texto.value=""; 
+        }
     };
     console.log("hola");
     console.log(divRegistro);
@@ -50,6 +57,7 @@ botonRegistrar.addEventListener('click',(e) =>{
     console.log(fragment);
     fragment.append(divRegistro);
     contenidoTabla.append(fragment);
+    showRegistermodall();
     
 
     // savetask(nombre.value)
