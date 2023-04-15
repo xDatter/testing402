@@ -10,14 +10,11 @@ const contenidoTabla = document.getElementById("contenidoTabla");
 const showRegistermodall = () =>{
     modall.classList.toggle("is-active")
 }
-// const volver = () =>{
-//     window.location.replace('./index.html');
-//     return false;
-// }
+
 
 openmoda1.addEventListener('click', showRegistermodall)
 cerrarRegistrar.addEventListener('click',showRegistermodall)
-// registerForm.addEventListener('submit',volver)
+
 const campos=["rut","nombre","apellido","ciudad","direccion","telefono","email","fechaNac","estadocivil","comentario"]
 
 botonRegistrar.addEventListener('click',(e) =>{
