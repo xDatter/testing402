@@ -37,18 +37,15 @@
     min-width: 90%;
     max-width: 100%;
     min-height: 5vh;
-    /* outline: red solid 1px; */
 }
 
 .contenidoTabla{
-    /* outline: red solid 1px; */
     min-width: 90%;
     max-width: 100%;
     min-height: 50vh;
     
 }
 .campo{
-    /* outline: blue solid 1px; */
     flex-wrap: wrap;
     margin: 2px;
     font-size: 13px;
@@ -62,7 +59,6 @@
     justify-content: left;
     flex-grow: 1;
     font-weight: bolder;
-    /* outline: red solid 1px; */
     background-color: #eee;
 
 }

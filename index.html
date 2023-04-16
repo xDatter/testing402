@@ -5,8 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="estilos/main.css">
   <title>Registros Médicos</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="estilos/main.css">
+  <script src="js/index.js" type="module"></script>
+
 </head>
 
 <body>
@@ -47,36 +50,6 @@
 
       <!-- Este es el contenedor grande de los registros, cuidado  -->
       <div class="table contenidoTabla" id="contenidoTabla">
-        
-        <!-- Este es un registro tipo, es importante mantener las clases y el orden de los campos inicia aqui y termina... -->
-        <!-- <div class="registroTabla">
-          <div class="campo campPeque"><p>18902170-4</p></div>
-          <div class="campo campPeque"><p>Ignacio</p></div>
-          <div class="campo campPeque"><p>Cárdenas</p></div>
-          <div class="campo campPeque"><p>Ancud</p></div>
-          <div class="campo campPeque"><p>Chiloé #1053</p></div>
-          <div class="campo campPeque"><p>+56957114003</p></div>
-          <div class="campo campMed"><p>ignacio.cardenas.request@gmail.com</p></div>
-          <div class="campo campMed"><p>25/09/1994</p></div>
-          <div class="campo campPeque"><p>Soltero</p></div>
-          <div class="campo campGrande"><p>Lorem ipsum dolor sit amis magni impedit modi quaerat. Cupiditate harum ipsa necessitatibus aliquam doloribus dolores impedit veritatis, est alias consectetur eos hic nulla autem eveniet maiores qui expedita vero sunt sed dolor ea vitae sapiente mollitia dolorem? Eligendi, quam!</p></div>
-        </div> -->
-        <!-- ... y terminar aquí -->
-        <!-- esta es la plantilla en blanco para usarla en el rellenado con el js -->
-        <!-- <div class="registroTabla">
-          <div class="campo campPeque"><p></p></div>
-          <div class="campo campPeque"><p></p></div>
-          <div class="campo campPeque"><p></p></div>
-          <div class="campo campPeque"><p></p></div>
-          <div class="campo campPeque"><p></p></div>
-          <div class="campo campPeque"><p></p></div>
-          <div class="campo campMed"><p></p></div>
-          <div class="campo campMed"><p></p></div>
-          <div class="campo campPeque"><p></p></div>
-          <div class="campo campGrande"><p></p></div>
-        </div> -->
-        <!-- fin de plantilla, no borrar -->
-
       </div>
 
     </div>
@@ -156,11 +129,11 @@
             <div class="control">
               <div class="select">
                 <select id="estadocivil">
-                  <option disabled selected value="0">Seleccione una Opción</option>
-                  <option value="soltero">Soltero/a</option>
-                  <option value="casado">Casado/a</option>
-                  <option value="divorciado">Divorciado/a</option>
-                  <option value="viudo">Viudo/a</option>
+                  <option disabled selected value="Sin respuesta">Seleccione una Opción</option>
+                  <option value="Soltero">Soltero/a</option>
+                  <option value="Casado">Casado/a</option>
+                  <option value="Divorciado">Divorciado/a</option>
+                  <option value="Viudo">Viudo/a</option>
                 </select>
               </div>
             </div>
@@ -181,8 +154,7 @@
 
     </div>
   </article>
-
-  <script type="module" src="js/index.js"> </script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 
 </html>
