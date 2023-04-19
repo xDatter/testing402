@@ -65,47 +65,47 @@
       </div>
 
       <article class="modal-card-body">
-        <form action="index.html" id="register-form" >
+        <form action="" id="register-form" >
 
           <div class="rut">
             <label class="label">RUT</label>
             <div class="control">
-              <input  class="input" id="rut" type="text" placeholder="ingresa tu RUT">
+              <input required  class="input" id="rut" type="text" placeholder="ingresa tu RUT">
             </div>
           </div>
 
           <div class="nombre">
             <label class="label">Nombre</label>
             <div class="control">
-              <input  class="input" id="nombre" type="text" placeholder="ingresa tu nombre">
+              <input required  class="input" id="nombre" type="text" placeholder="ingresa tu nombre">
             </div>
           </div>
 
           <div class="apellido">
             <label class="label">Apeliido</label>
             <div class="control">
-              <input  class="input" id="apellido" type="text" placeholder="ingresa tu apellido">
+              <input required  class="input" id="apellido" type="text" placeholder="ingresa tu apellido">
             </div>
           </div>
 
           <div class="ciudad">
             <label class="label">Ciudad</label>
             <div class="control">
-              <input  class="input" id="ciudad" type="text" placeholder="ingresa tu ciudad">
+              <input required  class="input" id="ciudad" type="text" placeholder="ingresa tu ciudad">
             </div>
           </div>
 
           <div class="direccion">
             <label class="label">Dirección</label>
             <div class="control">
-              <input  class="input" id="direccion" type="text" placeholder="ingresa tu direccion">
+              <input required  class="input" id="direccion" type="text" placeholder="ingresa tu direccion">
             </div>
           </div>
 
           <div class="telefono">
             <label class="label">Teléfono</label>
             <div class="control">
-              <input  class="input" id="telefono" type="tel" placeholder="+5698765432">
+              <input required  class="input" id="telefono" type="tel" placeholder="+5698765432">
               <span class="icon is-small is-left">
               </span>
             </div>
@@ -114,21 +114,21 @@
 
           <div class="email">
             <label class="label">Email</label>
-            <input  class="input" id="email" type="email" placeholder="tucorreo@hotmail.com">
+            <input required  class="input" id="email" type="email" placeholder="tucorreo@hotmail.com">
             <span class="icon is-small is-left">
             </span>
           </div>
 
           <div class="fechanacimiento">
             <label class="label">Fecha de Nacimiento</label>
-            <input  class="input" id="fechaNac" type="date">
+            <input required  class="input" id="fechaNac" type="date">
           </div>
 
           <div class="estadocivil">
             <label class="label">Estado Civil</label>
             <div class="control">
               <div class="select">
-                <select id="estadocivil">
+                <select id="estadocivil" required>
                   <option disabled selected value="Sin respuesta">Seleccione una Opción</option>
                   <option value="Soltero">Soltero/a</option>
                   <option value="Casado">Casado/a</option>
@@ -142,13 +142,13 @@
           <div class="comentario">
             <label class="label">Comentario</label>
             <div class="control">
-              <textarea class="textarea" id="comentario" placeholder="Escribe un comentario "></textarea>
+              <textarea required class="textarea" id="comentario" placeholder="Escribe un comentario "></textarea>
             </div>
           </div>          
+          <div class="modal-card-foot">
+            <button type="submit"  class="button is-success" id="botonRegistrar">Registrar</button>
+          </div>
         </form>
-        <div class="modal-card-foot">
-          <button   class="button is-success" id="botonRegistrar">Registrar</button>
-        </div>
       </article>
 
 

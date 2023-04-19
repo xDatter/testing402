@@ -1,20 +1,68 @@
 //# Imports
-import { registroOK } from "./toast.js";
-//# Exports
+// import { registroOK } from "./toast.js";
 
-// import { savetask } from './firebase.js'
+import { guardarReg, traerRegistros } from './firebase.js'
+
+
 const openmoda1 = document.getElementById("abrirRegistrar");
 const modall = document.getElementById("modall");
 const cerrarRegistrar = document.getElementById("cerrarRegistrar");
 const registerForm = document.getElementById("register-form");
-const botonRegistrar = document.getElementById("botonRegistrar");
 const contenidoTabla = document.getElementById("contenidoTabla");
+
+window.addEventListener("DOMContentLoaded", async ()=>{
+
+  traerRegistros((querySnapshot) => {
+
+    let html = ``
+    querySnapshot.forEach((doc) => {
+      const registro = doc.data();
+
+
+      html +=`
+      <div class="registroTabla">
+        <div class="campo campPeque"><p>${registro.rut}</p></div>
+        <div class="campo campPeque"><p>${registro.nombre}</p></div>
+        <div class="campo campPeque"><p>${registro.apellido}</p></div>
+        <div class="campo campPeque"><p>${registro.ciudad}</p></div>
+        <div class="campo campPeque"><p>${registro.direccion}</p></div>
+        <div class="campo campPeque"><p>${registro.telefono}</p></div>
+        <div class="campo campMed"><p>${registro.email}</p></div>
+        <div class="campo campMed"><p>${registro.fechaNac}</p></div>
+        <div class="campo campPeque"><p>${registro.estadocivil}</p></div>
+        <div class="campo campGrande"><p>${registro.comentario}</p></div>
+      </div>
+      `;
+
+    })
+    contenidoTabla.innerHTML = html;
+
+  });
+});
+
 
 const showRegistermodall = () => {
   modall.classList.toggle("is-active");
 };
 
+registerForm.addEventListener("submit",(evento) =>{
+  console.log("hola")
+  evento.preventDefault();
+  const rut = registerForm['rut'].value
+  const nombre = registerForm['nombre'].value
+  const apellido = registerForm['apellido'].value
+  const ciudad = registerForm['ciudad'].value
+  const direccion = registerForm['direccion'].value
+  const telefono = registerForm['telefono'].value
+  const email = registerForm['email'].value
+  const fechaNac = registerForm['fechaNac'].value
+  const estadocivil = registerForm['estadocivil'].value
+  const comentario = registerForm['comentario'].value
 
+  guardarReg(rut, nombre, apellido, ciudad, direccion, telefono, email, fechaNac, estadocivil, comentario);
+  registerForm.reset();
+  showRegistermodall();
+})
 
 openmoda1.addEventListener("click", showRegistermodall);
 cerrarRegistrar.addEventListener("click", showRegistermodall);
@@ -32,43 +80,4 @@ const campos = [
   "comentario",
 ];
 
-botonRegistrar.addEventListener("click", async (e) => {
-  const fragment = new DocumentFragment();
-  const divRegistro = document.createElement("div");
-  divRegistro.classList.add("registroTabla");
 
-  for (let i = 0; campos.length > i; i++) {
-    let divCampo = document.createElement("div");
-    let pCampo = document.createElement("p");
-    let texto = document.getElementById(`${campos[i]}`);
-    divCampo.classList.add("campo");
-
-    if (campos[i] == "email" || campos[i] == "fechaNac") {
-      divCampo.classList.add("campMed");
-    } else if (campos[i] == "comentario") {
-      divCampo.classList.add("campGrande");
-    } else {
-      divCampo.classList.add("campPeque");
-    }
-
-    pCampo.innerText = `${texto.value}`;
-    divCampo.append(pCampo);
-
-    divRegistro.append(divCampo);
-
-    if (i == 8) {
-      texto.value = "Sin respuesta";
-    } else {
-      texto.value = "";
-    }
-  }
-  fragment.append(divRegistro);
-  contenidoTabla.append(fragment);
-  showRegistermodall();
-  registroOK("Registro exitoso")
-
-});
-
-try {
-  // await savetask(nombre.value)
-} catch (error) {}
