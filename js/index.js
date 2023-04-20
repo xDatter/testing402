@@ -91,7 +91,7 @@ registerForm.addEventListener("submit",async (evento) =>{
        const campoNoRepeat1 = String(valor.comentario).toUpperCase();   // Esta variable se debe replicar para cada campo que no se desee repetir en reg
        const campoComparar1 = String(comentario).toUpperCase();
        if( campoNoRepeat1 == campoComparar1){
-        validar+= "1 "
+        validar+= "1"
        }
       });
       
