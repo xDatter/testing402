@@ -1,5 +1,7 @@
 
-export function registroOK(mensaje, tipo = "registroOK"){
+export function registroOK(mensaje, color = "#777"){
+  // colores verde #008013 - rojo #800000 - azulado #00666b
+
 Toastify({
     text: mensaje,
     duration: 3000,
@@ -11,7 +13,7 @@ Toastify({
     stopOnFocus: false, // Prevents dismissing of toast on hover
     style: {
     //   background: "linear-gradient(to right, #00b09b, #96c93d)",
-      background: tipo === "registroOK" ? "#48c78e" : "red"
+      background: color, borderRadius: "10px",
     },
     onClick: function () {}, // Callback after click
   }).showToast();
