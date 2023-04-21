@@ -43,10 +43,10 @@ const showRegistermodall = () => {
 };
 
 let mostrar="si";
+let html = ``
 MostrarOnOff.textContent="Mostrar Registros";
 MostrarOnOff.addEventListener("click",(e)=>{
-  let html = ``;
-  
+  html ="";
   ////////////////
   if (mostrar=="si"){
     MostrarOnOff.textContent="Ocultar Registros";
@@ -88,10 +88,12 @@ MostrarOnOff.addEventListener("click",(e)=>{
 ejecutarbuscar.addEventListener("click", async ()=>{
   const valorBuscar = String(buscarInput.value).toUpperCase()
   //////////////////////////////7
+  html ="";
 
   let registrosMatch = [];
 
   const regBuscar= await traerReg();
+  
   regBuscar.forEach((doc)=>{
 
    const valor = doc.data();      //valor de la base de datos
@@ -109,12 +111,27 @@ ejecutarbuscar.addEventListener("click", async ()=>{
   }
   
   if(hayMAtch != ""){
-    registrosMatch.push(idMatch);
+          html +=`
+      <div class="registroTabla" data-id="${idMatch}">
+        <div class="campo campPeque"><p>${valor.rut}</p></div>
+        <div class="campo campPeque"><p>${valor.nombre}</p></div>
+        <div class="campo campPeque"><p>${valor.apellido}</p></div>
+        <div class="campo campPeque"><p>${valor.ciudad}</p></div>
+        <div class="campo campPeque"><p>${valor.direccion}</p></div>
+        <div class="campo campPeque"><p>${valor.telefono}</p></div>
+        <div class="campo campMed"><p>${valor.email}</p></div>
+        <div class="campo campMed"><p>${valor.fechaNac}</p></div>
+        <div class="campo campPeque"><p>${valor.estadocivil}</p></div>
+        <div class="campo campGrande"><p>${valor.comentario}</p></div>
+      </div>
+      `;
   }
 
   });
+  contenidoTabla.innerHTML = html;
   
-  console.log(registrosMatch);
+  // console.log(registrosMatch);
+
 
   /////////////////
   buscarInput.value = "";
