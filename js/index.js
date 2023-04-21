@@ -31,7 +31,7 @@ const camposGlobales = [
 
 
 window.addEventListener("DOMContentLoaded", async ()=>{
-
+  traerRegistros();
 
   });
 
