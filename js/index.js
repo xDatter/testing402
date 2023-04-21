@@ -130,6 +130,10 @@ ejecutarbuscar.addEventListener("click", async ()=>{
   
   /////////////////
   buscarInput.value = "";
+  MostrarOnOff.textContent="Ocultar Registros";
+  MostrarOnOff.classList.remove("is-info");
+  MostrarOnOff.classList.add("is-danger");
+  mostrar ="no";
 });
 
 
