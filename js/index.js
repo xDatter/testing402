@@ -90,8 +90,6 @@ ejecutarbuscar.addEventListener("click", async ()=>{
   //////////////////////////////7
   html ="";
 
-  let registrosMatch = [];
-
   const regBuscar= await traerReg();
   
   regBuscar.forEach((doc)=>{
@@ -130,9 +128,6 @@ ejecutarbuscar.addEventListener("click", async ()=>{
   });
   contenidoTabla.innerHTML = html;
   
-  // console.log(registrosMatch);
-
-
   /////////////////
   buscarInput.value = "";
 });
