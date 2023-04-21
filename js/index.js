@@ -13,6 +13,7 @@ const buscarInput = document.getElementById("buscarInput");
 const modall = document.getElementById("modall");
 const cerrarRegistrar = document.getElementById("cerrarRegistrar");
 const registerForm = document.getElementById("register-form");
+const buscarForm = document.getElementById("buscarForm");
 const contenidoTabla = document.getElementById("contenidoTabla");
 
 const camposGlobales = [
@@ -85,7 +86,8 @@ MostrarOnOff.addEventListener("click",(e)=>{
     /////////////////
 });
 
-ejecutarbuscar.addEventListener("click", async ()=>{
+buscarForm.addEventListener("submit", async (e)=>{
+  e.preventDefault();
   const valorBuscar = String(buscarInput.value).toUpperCase()
   //////////////////////////////7
   html ="";
@@ -134,7 +136,13 @@ ejecutarbuscar.addEventListener("click", async ()=>{
   MostrarOnOff.classList.remove("is-info");
   MostrarOnOff.classList.add("is-danger");
   mostrar ="no";
-});
+})
+
+
+
+// ejecutarbuscar.addEventListener("click", async (e)=>{
+  
+// });
 
 
 
